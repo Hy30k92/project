@@ -3,74 +3,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music App</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /*검색창 스타일*/
-        .navbar{
-        }
-        #search {background-color: black; min-height: 60px; position: relative;
-            width: 100%; /* 너비를 100%로 설정 */
-            margin: 0; /* 마진 제거 */
-            padding: 0; /* 패딩 제거 */}
-        /* 사이드바 스타일 */
-        .sidebar {
+        .navbar {
             position: fixed;
-            top: 66px; /* 네비게이션 바 높이만큼 떨어지게 설정 */
-            left: 0;
-            width: 180px; /* 사이드바 너비 */
-            height: calc(100vh - 66px); /* 화면 높이에서 네비게이션 바 높이만큼 제외 */
-            background-color: black;
-            /*overflow-y: auto; !* 세로 스크롤바를 자동으로 추가 *!*/
-            z-index: 30;
+            top: 0;      /* 화면 상단에 고정 */
+            left: 0;     /* 화면 왼쪽에 고정 */
+            width: 100%;
+            z-index: 1000;
+            /* 다른 요소보다 위에 표시되도록 설정 */
+        }
+        #search {background-color: black; min-height: 58px; position: relative;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            max-width: 750px;
+        }
+        @media (max-width: 870px) {
+            #search {
+                margin-left: 60px ; /* 창을줄이면 토글이 생기면서 오른쪽으로 이동 */
+            }
         }
 
-        /* 본문 내용 스타일 */
-        .content {
-            margin: 20px 0 0 150px ;
-            padding: 50px;
-        }
+
+
+
     </style>
 </head>
-<body>
-<nav class="navbar navbar-expand bg-body-tertiary" style="background-color: black">
+<body style="background-color: black; color: white"  >
+<nav class="navbar navbar-expand container-fluid" style="background-color: black; border-bottom: 3px solid skyblue" >
     <div id="search" class="container-fluid">
-            <span class="navbar"></span>
+        <span class="navbar"></span>
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <a class="navbar-brand m-1" href="#" style="color: skyblue" >GITMUSIC</a>
-            <form class="d-flex ms-2" role="search">
-                <input class="form-control me-4 " style="width: 500px"
+            <form class="d-flex ms-2  w-100  " role="search">
+                <input class="form-control me-4  w-100 " style="width: 500px"
                        type="search" placeholder="제목명 가수명을 입력해주세요" aria-label="Search">
             </form>
-            <button class="btn btn-outline-success form-control me-1" style="width: 100px" type="submit" >검색</button>
+            <button class="btn btn-outline-dark form-control me-1" style="width: 100px; background-color: skyblue"
+                    type="submit" >검색</button>
         </div>
     </div>
 </nav>
-
-<div class="sidebar">
-    <nav>
-        <ul class="nav flex-column p-3">
-            <li class="nav-item">
-                <a class="nav-link" href="#">로그인 정보</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">보관함</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">게시판 (인디)</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">최신 영상 (MV)</a>
-            </li>
-        </ul>
-    </nav>
-</div>
-
-<div class="content">
-    <!-- 여기에 추가 콘텐츠를 넣으세요 -->
-<!--    <h1>Welcome to GITMUSIC</h1>-->
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
-</html>
+

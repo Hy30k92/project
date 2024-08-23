@@ -7,8 +7,12 @@ from app.routes.gitmusic import templates
 app = FastAPI()
 
 @app.get("/", response_class=HTMLResponse)
-def join(req: Request):
-    return templates.TemplateResponse('index.html', {'request': req})
+def musicmain(req: Request):
+    return templates.TemplateResponse('gitmusic/musicmain.html', {'request': req})
+
+@app.get("/test", response_class=HTMLResponse)
+def musicmain(req: Request):
+    return templates.TemplateResponse('gitmusic/test.html', {'request': req})
 
 
 
